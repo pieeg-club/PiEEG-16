@@ -20,6 +20,13 @@ This project is the result of several years of work on the development of BCI. W
 > The device must operate only from a battery - 5 V. Complete isolation from the mains power is required.! The device MUST not be connected to any kind of mains power, via USB or otherwise.   
 > Power supply - only battery 5V, please read the datasheet!!!!!  
 
+Connect the shield to PiEEG and after that connect the device to a battery (power supply) and connect electrodes. Full galvanic isolation from mains is required.
+Electrodes are positioned according to the International 10-20 system ​
+
+<p align="center">
+  <img src="https://github.com/pieeg-club/PiEEG-16/blob/main/images/all.png" width="50%" height="50%" alt="generals view">
+</p>
+
 #### Artifact test
 The process of measuring chewing and blinking artifacts using dry electrodes (Fz). Chewing occurred in the following sequence: 4 times, 3 times, 2, and 1 time, and the same for the blinking process. The y- axis is the processed EEG signal after passing filter bands of 1-40 Hz in microvolts and with 250 samples per second
 <p align="center">

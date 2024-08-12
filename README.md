@@ -33,3 +33,21 @@ The process of recording an EEG signal from an electrode (Fz) with eyes open and
 </p>
 
 
+Where to use
+<p align="center">
+  <img src= "https://github.com/pieeg-club/PiEEG-16/blob/main/images/Connection.bmp" width="80%" height="80%" alt="generals view">
+</p>
+
+How connect
+<p align="center">
+  <img src= "https://github.com/pieeg-club/PiEEG-16/blob/main/images/Connection.jpeg" width="80%" height="80%" alt="generals view">
+</p>
+
+
+
+#### Citation   
+Soon  
+
+#### Contacts   
+http://pieeg.com/  
+[LinkedIn](https://www.linkedin.com/company/96475004/admin/feed/posts/)   

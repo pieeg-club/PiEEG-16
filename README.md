@@ -7,6 +7,10 @@ and [script](https://github.com/pieeg-club/PiEEG-16/blob/main/Save_data/2.Data_V
 
 This project is the result of several years of work on the development of BCI. We believe that the easiest way to get started with biosignals is to use a shield. We will try to reveal the process of reading EEG signals as fully and clearly as possible.
 
+<p align="center">
+  <img src="https://github.com/pieeg-club/PiEEG-16/blob/main/images/pieeg.jpeg" width="50%" height="50%" alt="generals view">
+</p>
+
 #### Warnings
 >[!WARNING]
 > You are fully responsible for your personal decision to purchase this device and, ultimately, for its safe use. PiEEG is not a medical device and has not been certified by any government regulatory agency for use with the human body. Use it at your own risk.  

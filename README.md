@@ -40,6 +40,12 @@ The process of recording an EEG signal from an electrode (Fz) with eyes open and
   <img src="https://github.com/pieeg-club/PiEEG-16/blob/main/images/1alpha.bmp" width="50%" height="50%" alt="generals view">
 </p>
 
+Alpha test with wavelet
+<p align="center">
+  <img src="https://github.com/pieeg-club/PiEEG-16/blob/main/images/alpha.bmp" width="50%" height="50%" alt="generals view">
+</p>
+
+
 
 Where to use
 <p align="center">

@@ -33,14 +33,14 @@ The process of measuring chewing and blinking artifacts using dry electrodes (Fz
   <img src="https://github.com/pieeg-club/PiEEG-16/blob/main/images/1chewing.bmp" width="50%" height="50%" alt="generals view">
 </p>
 
-Alpha test (Dry Electrodes, no Gel)  
+Alpha test (Dry Electrodes, no Gel, 5-sec eyes closed, 5-sec eyes closed and again)    
 The process of recording an EEG signal from an electrode (Fz) with eyes open and closed. The y- axis is the processed EEG signal after passing filter bands of 8-12Hz in microvolts and with 250 samples per second
 
 <p align="center">
   <img src="https://github.com/pieeg-club/PiEEG-16/blob/main/images/1alpha.bmp" width="50%" height="50%" alt="generals view">
 </p>
 
-Alpha test with wavelet (Dry Electrodes, no Gel)  
+Alpha test with wavelet (Dry Electrodes, no Gel, 5-sec eyes closed, 5-sec eyes closed and again)    
 <p align="center">
   <img src="https://github.com/pieeg-club/PiEEG-16/blob/main/images/alpha.bmp" width="50%" height="50%" alt="generals view">
 </p>

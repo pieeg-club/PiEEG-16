@@ -65,6 +65,7 @@ How to connect
 #### Citation   
 Soon  
 
-#### Contacts   
+#### Contacts
+Full support in the [Forum](https://pieeg.com/forum-pieeg-low-cost-brain-computer-interface/)   
 http://pieeg.com/  
 [LinkedIn](https://www.linkedin.com/company/96475004/admin/feed/posts/)   

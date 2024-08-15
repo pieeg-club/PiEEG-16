@@ -61,9 +61,11 @@ How to connect
   <img src= "https://github.com/pieeg-club/PiEEG-16/blob/main/images/Connection.bmp" width="80%" height="80%" alt="generals view">
 </p>
 
-YouTube
-[![Youtube](https://github.com/pieeg-club/PiEEG-16/blob/main/images/youtube.jpg)](https://youtu.be/tjCazk2Efqs)    
+<a href="https://youtu.be/tjCazk2Efqs">
+  <img src="https://github.com/pieeg-club/PiEEG-16/blob/main/images/youtube.jpg" width="50%" height="50%" alt="generals view">
+</a>
 
+ 
 #### Citation   
 Soon  
 

@@ -62,9 +62,7 @@ How to connect
 </p>
 
 YouTube
-<p align="center">
 [![Youtube](https://github.com/pieeg-club/PiEEG-16/blob/main/images/youtube.jpg)](https://youtu.be/tjCazk2Efqs)    
-</p>
 
 #### Citation   
 Soon  

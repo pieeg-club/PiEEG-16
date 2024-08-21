@@ -68,9 +68,10 @@ YouTube video presentation
 
  
 #### Citation   
-Soon  
+https://pieeg.com/news/pieeg-16-is-availabe-in-the-market/  
+
 
 #### Contacts
 Full support in the [Forum](https://pieeg.com/forum-pieeg-low-cost-brain-computer-interface/)   
-http://pieeg.com/  
+
 [LinkedIn](https://www.linkedin.com/company/96475004/admin/feed/posts/)   

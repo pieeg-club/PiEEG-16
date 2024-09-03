@@ -2,6 +2,9 @@
 Easy way to neuroscience with low-cost shield PiEEG-16 that allows converting Raspberry Pi to brain-computer interface with opportunity measure 16 channels.     
 
 [Manual](https://colab.research.google.com/drive/1xW6fwzVdLH83zHoorjeWai6SdZoOanfA#scrollTo=nqHXFBm6J2XF) for device   
+[Manual](https://github.com/pieeg-club/PiEEG-16/blob/main/PiEEG_quick_start.pdf) for quick start  
+
+
 Measure 16 EEG channels with Shield PiEEG-16 and RaspberryPi
 
 Connect PiEEG-16 and just launch the [script](https://github.com/pieeg-club/PiEEG-16/blob/main/GUI/1.Graph.Py) for graph visualization in real-time and the [script](https://github.com/pieeg-club/PiEEG-16/blob/main/Save_data/1.Save_Data.py) to save data.   

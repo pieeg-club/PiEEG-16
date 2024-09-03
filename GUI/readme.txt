@@ -2,7 +2,8 @@ pip
 contourpy       1.3.0  
 cycler          0.12.1  
 fonttools       4.53.1 
-gpiod           1.5.4
+gpiod           1.5.4 // for - 2.Graph_Gpio_D _1_5_4.py   
+                // or gpiod 1.6.3 for 1.Graph_Gpio_D _1_6_3.py    
 kiwisolver      1.4.5
 matplotlib      3.9.2
 numpy           2.1.0

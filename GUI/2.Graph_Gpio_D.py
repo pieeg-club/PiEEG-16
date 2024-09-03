@@ -1,25 +1,42 @@
 import spidev
 import time
-from RPi import GPIO
+#from RPi import GPIO
 from matplotlib import pyplot as plt
 from scipy.ndimage import gaussian_filter1d
 from scipy import signal
 import gpiod
 
-GPIO.setwarnings(False) 
-GPIO.setmode(GPIO.BOARD)
+#GPIO.setwarnings(False) 
+#GPIO.setmode(GPIO.BOARD)
 
 button_pin_1 =  26 #13
 button_pin_2 =  13
+cs_pin = 19
 #chip = gpiod.Chip("gpiochip4")
-
-
-cs_line = chip.get_line(19)  # GPIO19
-cs_line.request(consumer="SPI_CS", type=gpiod.LINE_REQ_DIR_OUT)
-cs_line.set_value(1)  # Set CS high initially
-
-
+print ("ok1")
 chip = gpiod.chip("/dev/gpiochip4")
+print ("ok2")
+#cs_line = chip.get_line(19)  # GPIO19
+print ("ok3")
+#cs_line.request(consumer="SPI_CS", type=gpiod.LINE_REQ_DIR_OUT)
+
+print("ok4")
+cs_line = chip.get_line(cs_pin)
+print ("ok5")
+cs_line_out = gpiod.line_request()
+print ("ok6")
+cs_line_out.consumer = "SPI_CS"
+print ("ok7")
+cs_line_out.request_type = gpiod.line_request.DIRECTION_OUTPUT
+print ("ok8")
+cs_line.request(cs_line_out)
+
+#cs_line.request(consumer="SPI_CS", type=gpiod.line_request.DIRECTION_OUTPUT)
+print ("ok4")
+cs_line.set_value(1)  # Set CS high initially
+print ("ok5")
+
+
 #button_line_1 = chip.get_line(button_pin_1)
 #button_line_1.request(consumer = "Button", type = gpiod.LINE_REQ_DIR_IN)
 line_1 = chip.get_line(button_pin_1)
@@ -32,10 +49,10 @@ line_1.request(button_line_1)
 
 #button_line_2 = chip.get_line(button_pin_2)
 #button_line_2.request(consumer = "Button", type = gpiod.LINE_REQ_DIR_IN)
-button_line_2 = gpiod.line_request()
-button_line_2.consumer = "Button"
-button_line_2.request_type = gpiod.line_request.DIRECTION_INPUT
-line_2.request(button_line_2)
+#button_line_2 = gpiod.line_request()
+#button_line_2.consumer = "Button"
+#button_line_2.request_type = gpiod.line_request.DIRECTION_INPUT
+#line_2.request(button_line_2)
 
 spi = spidev.SpiDev()
 spi.open(0,0)
@@ -139,7 +156,7 @@ write_byte (0x11, 0x00)
 write_byte (0x15, 0x20)
 #
 write_byte (0x17, 0x00)
-write_byte (ch1set, 0x00)
+write_byte (ch1set, 0x01)
 write_byte (ch2set, 0x00)
 write_byte (ch3set, 0x00)
 write_byte (ch4set, 0x00)
@@ -170,14 +187,14 @@ write_byte_2 (0x11, 0x00)
 write_byte_2 (0x15, 0x20)
 #
 write_byte_2 (0x17, 0x00)
-write_byte_2 (ch1set, 0x00)
+write_byte_2 (ch1set, 0x01)
 write_byte_2 (ch2set, 0x00)
 write_byte_2 (ch3set, 0x00)
 write_byte_2 (ch4set, 0x00)
 write_byte_2 (ch5set, 0x00)
 write_byte_2 (ch6set, 0x00)
 write_byte_2 (ch7set, 0x00)
-write_byte_2 (ch8set, 0x00)
+write_byte_2 (ch8set, 0x01)
 
 send_command_2 (rdatac)
 send_command_2 (start)
@@ -268,7 +285,7 @@ while 1:
     #print("2", button_state_2)
 
         #print ("ok3")
-        button_state = button_line_1.get_value()
+        button_state = line_1.get_value()
         #print (button_state)
         if button_state == 1:
             test_DRDY = 10

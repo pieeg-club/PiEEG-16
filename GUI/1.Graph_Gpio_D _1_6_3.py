@@ -406,7 +406,7 @@ while 1:
                     data_for_graph_7 = butter_lowpass_filter(data_filt_numpy_high_7, lowcut, fps)
 
                     axis[2,1].plot(range(axis_x,axis_x+sample_lens,1),data_for_graph_7[250:], color = '#0a0b0c')  
-                    axis[2,1].axis([axis_x-x_minux_graph, axis_x+x_plus_graph, data_for_graph_7[50]-y_minus_graph, data_for_graph_1[150]+y_plus_graph])
+                    axis[2,1].axis([axis_x-x_minux_graph, axis_x+x_plus_graph, data_for_graph_7[50]-y_minus_graph, data_for_graph_7[150]+y_plus_graph])
 
                     #8
                     data_after_8 = data_8ch_test        

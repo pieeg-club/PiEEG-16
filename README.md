@@ -72,7 +72,7 @@ YouTube video presentation
  
 #### Citation   
 https://pieeg.com/news/pieeg-16-is-availabe-in-the-market/  
-arxive paper https://arxiv.org/abs/2409.07491
+arxive paper https://arxiv.org/abs/2409.07491  
 Rakhmatulin, I. (2024). PiEEG-16 to Measure 16 EEG Channels with Raspberry Pi for Brain-Computer Interfaces and EEG devices. arXiv:2409.07491
 
 #### Contacts

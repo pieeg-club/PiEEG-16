@@ -66,7 +66,7 @@ How to connect
 
 Pins 
 <p align="center">
-  <img src= "https://github.com/pieeg-club/PiEEG-16/blob/main/images/pins.bmp" width="80%" height="80%" alt="generals view">
+  <img src= "https://github.com/pieeg-club/PiEEG-16/blob/main/images/pins2.bmp" width="80%" height="80%" alt="generals view">
 </p>
 
 

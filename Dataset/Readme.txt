@@ -1,4 +1,4 @@
-# Dataset detail  
+
 Dry Electrodes Ag/AgCl, without Gel    
 Raw data, 250 samples per second     
 

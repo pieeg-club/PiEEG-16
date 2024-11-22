@@ -1,0 +1,36 @@
+MIT License for Software and SDK 
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+About hardware liability read it here https://pieeg.com/liability-pieeg/  
+
+You are fully responsible for your personal decision to purchase this device and, ultimately, for its safe use. PiEEG kit are not a medical device and has not been certified by any government regulatory agency for use with the human body. Use it at your own risk.
+PiEEG kit is subject to the terms outlined below. This evaluation board/kit is exclusively intended for ENGINEERING DEVELOPMENT, DEMONSTRATION, OR EVALUATION PURPOSES and is not deemed a final end-product suitable for general consumer use.
+PiEEG kit are not intended for medical, clinical, or diagnostic purposes, and they are supplied “as is.” PiEEG kit makes no explicit or implied warranties regarding functionality, operability, or use, including, 
+but not limited to, any implied warranties of fitness for a specific purpose or non-infringement.
+PiEEG kit and absolutely for all devices that have with PiEEG kit connection are engineered to draw power exclusively from low-voltage DC sources, such as batteries, only with 5 V and are not compatible not under any circumstances (for any tasks) with power sources from the grid, power outlets, USB ports, etc.
+Individuals handling the product(s) must possess electronics training and adhere to recognized engineering practices. The provided goods are not designed to fulfill all required design, marketing, and manufacturing-related protective considerations, including standard safety and environmental measures present in end products incorporating similar semiconductor components or circuit boards.
+This evaluation board/kit does not fall within the scope of European Union directives concerning electromagnetic compatibility, restricted substances (RoHS), recycling (WEEE), FCC, CE, or UL, and thus may not satisfy the technical requirements of these directives or related regulations.
+We explicitly disclaim any liability for direct, indirect, consequential, incidental, or special damages, including lost revenues, lost profits, losses resulting from business interruption, or loss of data, irrespective of the form of action or legal theory under which the liability may be asserted, even if awareness of such damages is provided.
+In no event will PiEEG kit be liable to the end user for special, incidental, consequential, exemplary, punitive, or other indirect damages, or for loss of profits, loss of data, or loss of use arising from the manufacture, sale, supply, or failure or delay in supplying the products or services related thereto, whether based upon warranty, contract, tort, strict liability,
+or otherwise, even if PiEEG kit has been advised of the possibility of such damages or losses. Under no circumstances will PiEEG kit total liability to the end user from any and all causes (including negligence) 
+exceed the total amount paid by the end user for the products.
+This is not a device made for consumer home use. The internal electronics are exposed during normal operation to facilitate easy access by developers and professionals.
+As such, you must be aware of the hazards of operating exposed electronics, and are familiar with standard anti-static procedures for handling bare electrical components, or be prepared to make your own case.
+There is no patient isolation circuitry on the device, so again, you must be sure to operate the PiEEG kit and all connected devices from 5V battery power.

@@ -11,6 +11,7 @@ from scipy.ndimage import gaussian_filter1d
 from scipy import signal
 import gpiod
 from time import sleep
+import pandas as pd
 
 button_pin_1 =  26 #13
 button_pin_2 =  13

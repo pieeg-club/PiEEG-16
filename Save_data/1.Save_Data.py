@@ -319,32 +319,29 @@ while 1:
                 data_15ch_test.append(result_2[7])
                 data_16ch_test.append(result_2[8])
 
+            if len(data_9ch_test)==sample_len:
+                data_dict = {
+                    'data_1ch_test': data_1ch_test,
+                    'data_2ch_test': data_2ch_test,
+                    'data_3ch_test': data_3ch_test,
+                    'data_4ch_test': data_4ch_test,
+                    'data_5ch_test': data_5ch_test,
+                    'data_6ch_test': data_6ch_test,
+                    'data_7ch_test': data_7ch_test,
+                    'data_8ch_test': data_7ch_test,
+                    'data_9ch_test': data_1ch_test,
+                    'data_10ch_test': data_2ch_test,
+                    'data_11ch_test': data_3ch_test,
+                    'data_12ch_test': data_4ch_test,
+                    'data_13ch_test': data_5ch_test,
+                    'data_14ch_test': data_6ch_test,
+                    'data_15ch_test': data_7ch_test,
+                    'data_16ch_test': data_8ch_test
+                            }
 
-                
-                
-                if len(data_9ch_test)==sample_len:
-					data_dict = {
-						'data_1ch_test': data_1ch_test,
-						'data_2ch_test': data_2ch_test,
-						'data_3ch_test': data_3ch_test,
-						'data_4ch_test': data_4ch_test,
-						'data_5ch_test': data_5ch_test,
-						'data_6ch_test': data_6ch_test,
-						'data_7ch_test': data_7ch_test,
-						'data_8ch_test': data_7ch_test,
-						'data_9ch_test': data_1ch_test,
-						'data_10ch_test': data_2ch_test,
-						'data_11ch_test': data_3ch_test,
-						'data_12ch_test': data_4ch_test,
-						'data_13ch_test': data_5ch_test,
-						'data_14ch_test': data_6ch_test,
-						'data_15ch_test': data_7ch_test,
-						'data_16ch_test': data_8ch_test
-								}
-
-					df = pd.DataFrame(data_dict)
-					df.to_excel("output3.xlsx", index=False)
-					print (df)
+                df = pd.DataFrame(data_dict)
+                df.to_excel("output3.xlsx", index=False)
+                print (df)
 
 
 spi.close()

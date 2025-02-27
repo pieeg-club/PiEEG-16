@@ -91,7 +91,7 @@ def read_byte_2(register):
  register_write=write|register
  data = [register_write,0x00,register]
  cs_line.set_value(0)
- read_reg=spi_2.xfer(data)
+ read_reg=spi.xfer(data)
  cs_line.set_value(1)
  print ("data", read_reg)
  

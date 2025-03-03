@@ -14,7 +14,8 @@ button_pin_2 =  13
 cs_pin = 19
 #chip = gpiod.Chip("gpiochip4")
 print ("ok1")
-chip = gpiod.chip("/dev/gpiochip4")
+# chip = gpiod.chip("/dev/gpiochip4")
+chip = gpiod.chip("0")
 print ("ok2")
 #cs_line = chip.get_line(19)  # GPIO19
 print ("ok3")

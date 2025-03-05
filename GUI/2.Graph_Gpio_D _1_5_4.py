@@ -13,29 +13,18 @@ button_pin_1 =  26 #13
 button_pin_2 =  13
 cs_pin = 19
 #chip = gpiod.Chip("gpiochip4")
-print ("ok1")
 # chip = gpiod.chip("/dev/gpiochip4")
 chip = gpiod.chip("0")
-print ("ok2")
 #cs_line = chip.get_line(19)  # GPIO19
-print ("ok3")
 #cs_line.request(consumer="SPI_CS", type=gpiod.LINE_REQ_DIR_OUT)
-
-print("ok4")
 cs_line = chip.get_line(cs_pin)
-print ("ok5")
 cs_line_out = gpiod.line_request()
-print ("ok6")
 cs_line_out.consumer = "SPI_CS"
-print ("ok7")
 cs_line_out.request_type = gpiod.line_request.DIRECTION_OUTPUT
-print ("ok8")
 cs_line.request(cs_line_out)
 
 #cs_line.request(consumer="SPI_CS", type=gpiod.line_request.DIRECTION_OUTPUT)
-print ("ok4")
 cs_line.set_value(1)  # Set CS high initially
-print ("ok5")
 
 
 #button_line_1 = chip.get_line(button_pin_1)

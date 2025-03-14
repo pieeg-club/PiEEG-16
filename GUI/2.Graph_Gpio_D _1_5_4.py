@@ -29,8 +29,10 @@ cs_line.set_value(1)  # Set CS high initially
 
 #button_line_1 = chip.get_line(button_pin_1)
 #button_line_1.request(consumer = "Button", type = gpiod.LINE_REQ_DIR_IN)
+
 line_1 = chip.get_line(button_pin_1)
-line_2 = chip.get_line(button_pin_2)
+
+#line_2 = chip.get_line(button_pin_2)
 
 button_line_1 = gpiod.line_request()
 button_line_1.consumer = "Button"

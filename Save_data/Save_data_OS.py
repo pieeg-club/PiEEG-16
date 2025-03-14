@@ -1,29 +1,8 @@
-
-
-Skip to content
-Using Gmail with screen readers
-
-Conversations
-25.43 GB of 100 GB used
-Terms · Privacy · Programme Policies
-Last account activity: 2 minutes ago
-Details
 import spidev
 import time
 import gpiod
 import pandas as pd
 import sys
-#from RPi import GPIO
-#GPIO.setwarnings(False) 
-#GPIO.setmode(GPIO.BOARD)
-#from gpiozero import LED,Button
-#from matplotlib import pyplot as plt
-#sw1 = Button(26,pull_up=True)#  37
-#from gpiozero import LED,Button
-#from scipy.ndimage import gaussian_filter1d
-#from scipy import signal
-#from time import sleep
-
 
 button_pin_1 =  26 #13
 button_pin_2 =  13
@@ -323,5 +302,3 @@ while 1:
 
 
 spi.close()
-save_data_os.py
-Displaying save_data_os.py.

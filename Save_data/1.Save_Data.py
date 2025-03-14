@@ -1,6 +1,6 @@
 import spidev
 import time
-from RPi import GPIO
+#from RPi import GPIO
 GPIO.setwarnings(False) 
 GPIO.setmode(GPIO.BOARD)
 from gpiozero import LED,Button

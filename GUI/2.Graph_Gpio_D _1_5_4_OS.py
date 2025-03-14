@@ -56,14 +56,14 @@ line_1.request(button_line_1)
 
 spi = spidev.SpiDev()
 spi.open(0,0)
-spi.max_speed_hz  = 4000000#600000
+spi.max_speed_hz  = 1000000#4000000
 spi.lsbfirst=False
 spi.mode=0b01
 spi.bits_per_word = 8
 
 spi_2 = spidev.SpiDev()
 spi_2.open(0,1)
-spi_2.max_speed_hz=4000000#600000
+spi_2.max_speed_hz= 1000000#400000
 spi_2.lsbfirst=False
 spi_2.mode=0b01
 spi_2.bits_per_word = 8

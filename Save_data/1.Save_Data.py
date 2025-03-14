@@ -320,7 +320,7 @@ while 1:
                 data_15ch_test.append(result_2[7])
                 data_16ch_test.append(result_2[8])
 
-            if len(data_9ch_test)==sample_len:
+            if len(data_9ch_test)==20000:  # set  lenght 250 it is 1 sec, 20000  = 80 sec   
                 data_dict = {
                     'data_1ch_test': data_1ch_test,
                     'data_2ch_test': data_2ch_test,

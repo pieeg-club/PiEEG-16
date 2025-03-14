@@ -6,7 +6,7 @@ import pandas as pd
 #GPIO.setwarnings(False) 
 #GPIO.setmode(GPIO.BOARD)
 #from gpiozero import LED,Button
-from matplotlib import pyplot as plt
+#from matplotlib import pyplot as plt
 #sw1 = Button(26,pull_up=True)#  37
 #from gpiozero import LED,Button
 #from scipy.ndimage import gaussian_filter1d
@@ -38,7 +38,6 @@ button_line_1 = gpiod.line_request()
 button_line_1.consumer = "Button"
 button_line_1.request_type = gpiod.line_request.DIRECTION_INPUT
 line_1.request(button_line_1)
-
 
 #button_line_2 = chip.get_line(button_pin_2)
 #button_line_2.request(consumer = "Button", type = gpiod.LINE_REQ_DIR_IN)
@@ -127,7 +126,6 @@ def write_byte_2(register,data):
  spi_2.xfer(data)
  cs_line.set_value(1)
 
- 
 
 send_command (wakeup)
 send_command (stop)
@@ -158,7 +156,6 @@ write_byte (ch8set, 0x00)
 
 send_command (rdatac)
 send_command (start)
-
 
 send_command_2 (wakeup)
 send_command_2 (stop)
@@ -195,7 +192,6 @@ DRDY=1
 result=[0]*27
 result_2=[0]*27
 
-
 data_1ch_test = []
 data_2ch_test = []
 data_3ch_test = []
@@ -214,60 +210,14 @@ data_14ch_test = []
 data_15ch_test = []
 data_16ch_test = []
 
-axis_x=0
-y_minus_graph=100
-y_plus_graph=100
-x_minux_graph=5000
-x_plus_graph=250
-sample_len = 250
-
-fig, axis = plt.subplots(4, 4, figsize=(5, 5))
-plt.subplots_adjust(hspace=1)
-ch_name = 0
-ch_name_title = [1,5,2,6,3,7,4,8]
-axi = [(i, j) for i in range(4) for j in range(2)]
-for ax_row, ax_col in axi:
-    axis[ax_row, ax_col].set_xlabel('Time')
-    axis[ax_row, ax_col].set_ylabel('Amplitude')
-    axis[ax_row, ax_col].set_title('Data after pass filter Ch-' + str(ch_name_title[ch_name]))
-    ch_name = ch_name + 1    
-    
 test_DRDY = 5 
 test_DRDY_2 = 5
-#1.2 Band-pass filter
-data_before = []
-data_after =  []
-just_one_time = 0
-data_lenght_for_Filter = 2     # how much we read data for filter, all lenght  [_____] + [_____] + [_____]
-read_data_lenght_one_time = 1   # for one time how much read  [_____]
-sample_len = 250
-sample_lens = 250
+
 fps = 250
 highcut = 1
 lowcut = 10
 data_before_1 = data_before_2 = data_before_3 = data_before_4 = data_before_5 = data_before_6 = data_before_7 = data_before_8 = [0]*250
 data_before_9 = data_before_10 = data_before_11 = data_before_12 = data_before_13 = data_before_14 = data_before_15 = data_before_16 = [0]*250
-
-print (data_lenght_for_Filter*read_data_lenght_one_time-read_data_lenght_one_time)
-
-def butter_lowpass(cutoff, fs, order=5):
-    nyq = 0.5 * fs
-    normal_cutoff = cutoff / nyq
-    b, a = signal.butter(order, normal_cutoff, btype='low', analog=False)
-    return b, a
-def butter_lowpass_filter(data, cutoff, fs, order=5):
-    b, a = butter_lowpass(cutoff, fs, order=order)
-    y = signal.lfilter(b, a, data)
-    return y
-def butter_highpass(cutoff, fs, order=3):
-    nyq = 0.5 * fs
-    normal_cutoff = cutoff / nyq
-    b, a = signal.butter(order, normal_cutoff, btype='high', analog=False)
-    return b, a
-def butter_highpass_filter(data, cutoff, fs, order=5):
-    b, a = butter_highpass(cutoff, fs, order=order)
-    y = signal.filtfilt(b, a, data)
-    return y
 
 while 1:
     

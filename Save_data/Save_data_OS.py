@@ -6,7 +6,7 @@ import pandas as pd
 #GPIO.setwarnings(False) 
 #GPIO.setmode(GPIO.BOARD)
 #from gpiozero import LED,Button
-#from matplotlib import pyplot as plt
+from matplotlib import pyplot as plt
 #sw1 = Button(26,pull_up=True)#  37
 #from gpiozero import LED,Button
 #from scipy.ndimage import gaussian_filter1d

@@ -1,7 +1,18 @@
+
+
+Skip to content
+Using Gmail with screen readers
+
+Conversations
+25.43 GB of 100 GB used
+Terms · Privacy · Programme Policies
+Last account activity: 2 minutes ago
+Details
 import spidev
 import time
 import gpiod
 import pandas as pd
+import sys
 #from RPi import GPIO
 #GPIO.setwarnings(False) 
 #GPIO.setmode(GPIO.BOARD)
@@ -17,8 +28,8 @@ import pandas as pd
 button_pin_1 =  26 #13
 button_pin_2 =  13
 cs_pin = 19
-#chip = gpiod.Chip("gpiochip4")
-chip = gpiod.chip("0")
+chip = gpiod.chip("gpiochip4")
+#chip = gpiod.chip("0")
 #cs_line = chip.get_line(19)  # GPIO19
 cs_line = chip.get_line(cs_pin)
 cs_line_out = gpiod.line_request()
@@ -29,8 +40,8 @@ cs_line.request(cs_line_out)
 
 cs_line.set_value(1)  # Set CS high initially
 
-button_line_1 = chip.get_line(button_pin_1)
-button_line_1.request(consumer = "Button", type = gpiod.LINE_REQ_DIR_IN)
+#button_line_1 = chip.get_line(button_pin_1)
+#button_line_1.request(consumer = "Button", type = gpiod.LINE_REQ_DIR_IN)
 
 line_1 = chip.get_line(button_pin_1)
 
@@ -45,7 +56,7 @@ line_1.request(button_line_1)
 spi = spidev.SpiDev()
 
 spi.open(0,0)
-spi.max_speed_hz  = 4000000#600000
+spi.max_speed_hz  = 1000000#600000
 spi.lsbfirst=False
 spi.mode=0b01
 spi.bits_per_word = 8
@@ -53,7 +64,7 @@ spi.bits_per_word = 8
 spi_2 = spidev.SpiDev()
 
 spi_2.open(0,1)
-spi_2.max_speed_hz=4000000#600000
+spi_2.max_speed_hz=1000000#600000
 spi_2.lsbfirst=False
 spi_2.mode=0b01
 spi_2.bits_per_word = 8
@@ -145,14 +156,14 @@ write_byte (0x11, 0x00)
 write_byte (0x15, 0x20)
 #
 write_byte (0x17, 0x00)
-write_byte (ch1set, 0x00)
-write_byte (ch2set, 0x00)
-write_byte (ch3set, 0x00)
-write_byte (ch4set, 0x00)
-write_byte (ch5set, 0x00)
-write_byte (ch6set, 0x00)
-write_byte (ch7set, 0x00)
-write_byte (ch8set, 0x00)
+write_byte (ch1set, 0x01)
+write_byte (ch2set, 0x01)
+write_byte (ch3set, 0x01)
+write_byte (ch4set, 0x01)
+write_byte (ch5set, 0x01)
+write_byte (ch6set, 0x01)
+write_byte (ch7set, 0x01)
+write_byte (ch8set, 0x01)
 
 send_command (rdatac)
 send_command (start)
@@ -175,14 +186,14 @@ write_byte_2 (0x11, 0x00)
 write_byte_2 (0x15, 0x20)
 #
 write_byte_2 (0x17, 0x00)
-write_byte_2 (ch1set, 0x00)
-write_byte_2 (ch2set, 0x00)
-write_byte_2 (ch3set, 0x00)
-write_byte_2 (ch4set, 0x00)
-write_byte_2 (ch5set, 0x00)
-write_byte_2 (ch6set, 0x00)
-write_byte_2 (ch7set, 0x00)
-write_byte_2 (ch8set, 0x00)
+write_byte_2 (ch1set, 0x01)
+write_byte_2 (ch2set, 0x01)
+write_byte_2 (ch3set, 0x01)
+write_byte_2 (ch4set, 0x01)
+write_byte_2 (ch5set, 0x01)
+write_byte_2 (ch6set, 0x01)
+write_byte_2 (ch7set, 0x01)
+write_byte_2 (ch8set, 0x01)
 
 send_command_2 (rdatac)
 send_command_2 (start)
@@ -285,7 +296,7 @@ while 1:
                 data_15ch_test.append(result_2[7])
                 data_16ch_test.append(result_2[8])
 
-            if len(data_9ch_test)==20000:  # set  lenght 250 it is 1 sec, 20000  = 80 sec   
+            if len(data_9ch_test)==10000:  # set  lenght 250 it is 1 sec, 20000  = 80 sec   
                 data_dict = {
                     'data_1ch_test': data_1ch_test,
                     'data_2ch_test': data_2ch_test,
@@ -308,6 +319,9 @@ while 1:
                 df = pd.DataFrame(data_dict)
                 df.to_excel("output3.xlsx", index=False)
                 print (df)
+                sys.exit()
 
 
 spi.close()
+save_data_os.py
+Displaying save_data_os.py.

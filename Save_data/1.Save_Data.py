@@ -1,16 +1,16 @@
 import spidev
 import time
 #from RPi import GPIO
-GPIO.setwarnings(False) 
-GPIO.setmode(GPIO.BOARD)
-from gpiozero import LED,Button
-from matplotlib import pyplot as plt
+#GPIO.setwarnings(False) 
+#GPIO.setmode(GPIO.BOARD)
+#from gpiozero import LED,Button
+#from matplotlib import pyplot as plt
 #sw1 = Button(26,pull_up=True)#  37
 #from gpiozero import LED,Button
-from scipy.ndimage import gaussian_filter1d
-from scipy import signal
+#from scipy.ndimage import gaussian_filter1d
+#from scipy import signal
 import gpiod
-from time import sleep
+#from time import sleep
 import pandas as pd
 
 button_pin_1 =  26 #13

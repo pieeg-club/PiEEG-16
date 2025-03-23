@@ -15,8 +15,8 @@ import pandas as pd
 
 button_pin_1 =  26 #13
 button_pin_2 =  13
-chip = gpiod.Chip("gpiochip4")
-
+#chip = gpiod.Chip("gpiochip4")
+chip = gpiod.chip("0")
 cs_line = chip.get_line(19)  # GPIO19
 cs_line.request(consumer="SPI_CS", type=gpiod.LINE_REQ_DIR_OUT)
 cs_line.set_value(1)  # Set CS high initially

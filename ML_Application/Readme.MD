@@ -1,4 +1,4 @@
-# How to Use Machine Learning to Stress Control 
+# How to Use Machine Learning to Stress Control via EEG 
 
 If you want to create an EEG-based classifier for machine learning, here’s a short guide:
 

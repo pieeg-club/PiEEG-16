@@ -3,6 +3,7 @@ If you want to create an EEG-based classifier for machine learning, here’s a s
 1. Collect EEG Datasets:
 
 Use Script 1 to collect raw EEG data.
+Data has the next Format in Excel File 
 
 <p align="center">
   <img src="https://github.com/pieeg-club/PiEEG-16/blob/main/images/Collected_dataset.jpg" alt="generals view">

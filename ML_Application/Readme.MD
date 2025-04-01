@@ -16,7 +16,7 @@ Data has the next Format in the Excel File (example of dataset)
   <img src="https://github.com/pieeg-club/PiEEG-16/blob/main/images/Collected_dataset.jpg" alt="generals view">
 </p>
 
-You need (as an example), gather 50 datasets (1 minute or more each) for stress and 50 datasets (1 minute or more each) for no stress conditions.
+You need (as an example), gather 50 datasets (1 minute or more each) for stress and 50 datasets (1 minute or more each) for no stress conditions.  
 
 #### 2. Compute Power in Key Frequency Bands:
 It is not good to just use raw data for ML, so via the next script [2.Convert_to_Power_Alpha.py](https://github.com/pieeg-club/PiEEG-16/blob/main/ML_Application/2.Convert_to_Power_Alpha.py) you can convert all your dataset. 

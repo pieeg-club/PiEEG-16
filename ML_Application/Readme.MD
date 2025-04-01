@@ -26,8 +26,8 @@ We chose a 1 sec length to calculate power in alpha.
 Now we have 50 dataset Power in Alpha with stress and 50 dataset Power in Alpha - not stress 
 
 #### 3. Prepare the Data for ML
-Combine the 100 datasets and create two separate Excel files for stress and not stress. But the most important moment here is that we should indicate that we should add an additional column that will indicate the record number (entry number or subject number)
-It should looks like that 
+Combine the 50 datasets for stress and not stress  to  two separate Excel files for stress and not stress. But the most important moment here is that you should add an additional column that will indicate the record number (entry number or subject number).  
+It should look like that 
 
 
 #### 4. Train the Classifier:

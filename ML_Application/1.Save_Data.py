@@ -1,16 +1,6 @@
 import spidev
 import time
-#from RPi import GPIO
-#GPIO.setwarnings(False) 
-#GPIO.setmode(GPIO.BOARD)
-#from gpiozero import LED,Button
-#from matplotlib import pyplot as plt
-#sw1 = Button(26,pull_up=True)#  37
-#from gpiozero import LED,Button
-#from scipy.ndimage import gaussian_filter1d
-#from scipy import signal
 import gpiod
-#from time import sleep
 import pandas as pd
 
 button_pin_1 =  26 #13
@@ -255,12 +245,7 @@ def butter_highpass_filter(data, cutoff, fs, order=5):
     return y
 
 while 1:
-    
-    
-    #print ("1", button_state)
-    #print("2", button_state_2)
-
-        #print ("ok3")
+ 
         button_state = button_line_1.get_value()
         #print (button_state)
         if button_state == 1:

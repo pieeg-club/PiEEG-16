@@ -4,6 +4,12 @@ If you want to create an EEG-based classifier for machine learning, here’s a s
 
 Use Script 1 to collect raw EEG data.
 
+<p align="center">
+  <img src="https://github.com/pieeg-club/PiEEG-16/blob/main/images/Collected_dataset.jpg" width="50%" height="50%" alt="generals view">
+</p>
+
+
+
 For example, gather 50 datasets (1-minute each) for stress and 50 datasets (1-minute each) for no stress conditions.
 
 2. Compute Power in Key Frequency Bands:

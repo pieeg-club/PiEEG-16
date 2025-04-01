@@ -5,7 +5,7 @@ If you want to create an EEG-based classifier for machine learning, here’s a s
 Use Script 1 to collect raw EEG data.
 
 <p align="center">
-  <img src="https://github.com/pieeg-club/PiEEG-16/blob/main/images/Collected_dataset.jpg" width="50%" height="50%" alt="generals view">
+  <img src="https://github.com/pieeg-club/PiEEG-16/blob/main/images/Collected_dataset.jpg" alt="generals view">
 </p>
 
 

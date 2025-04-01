@@ -10,7 +10,7 @@ Use Script [1.Save_Data.py](https://github.com/pieeg-club/PiEEG-16/blob/main/ML_
 
 
 
-Data has the next Format in the Excel File 
+Data has the next Format in the Excel File (example of dataset)
 
 <p align="center">
   <img src="https://github.com/pieeg-club/PiEEG-16/blob/main/images/Collected_dataset.jpg" alt="generals view">

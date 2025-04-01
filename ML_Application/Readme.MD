@@ -19,7 +19,7 @@ Data has the next Format in the Excel File (example of dataset)
 You need (as an example), gather 50 datasets (1 minute or more each) for stress and 50 datasets (1 minute or more each) for no stress conditions.
 
 #### 2. Compute Power in Key Frequency Bands:
-It is not good to just use raw data for ML
+It is not good to just use raw data for ML, so via the next script [2.Convert_to_Power_Alpha.py] (https://github.com/pieeg-club/PiEEG-16/blob/main/ML_Application/2.Convert_to_Power_Alpha.py)
 
 Much better to calculate power in the alpha (or beta, delta, and theta) frequency for all 100 datasets. 
 You can use the next script to do that. We chose a 1 sec length to calculate power in alpha. 

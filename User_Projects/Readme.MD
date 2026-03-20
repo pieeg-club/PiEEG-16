@@ -1,1 +1,1 @@
-To showcase your project, please create a new folder named after your project and include a detailed README file. We highly encourage including images in your description to help it stand out. At PiEEG, we are committed to promoting your work across our platforms."
+To showcase your project, please create a new folder named after your project and include a detailed README file. We highly encourage including images in your description to help it stand out. At PiEEG, we are committed to promoting your work across our platforms.

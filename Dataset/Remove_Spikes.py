@@ -1,114 +1,80 @@
 """
-EEG Spike Removal Script for PiEEG-16
-========================================
-Detects and removes/interpolates spikes using robust MAD-based z-score.
-Works per-channel, so channels with very different baselines are handled correctly.
+PiEEG-16 Spike Removal Script
+-------------------------------
+Detects and removes spike rows caused by SPI protocol failures between
+Raspberry Pi and PiEEG-16. When a spike is detected in ANY channel,
+the entire row (all 16 channels) is removed to preserve EEG data alignment.
 
-Usage:
-    python remove_eeg_spikes.py
-
-Outputs:
-    output3_clean.xlsx   – cleaned EEG data
-    spike_plot_<ch>.png  – before/after plot for each channel that had spikes
+Detection method: IQR-based outlier detection (robust to non-normal EEG distributions).
+A sample is flagged as a spike if it exceeds:  Q3 + N*IQR  or falls below  Q1 - N*IQR
+Default multiplier N=10 is conservative — only catches true protocol glitches.
 """
 
 import pandas as pd
 import numpy as np
-import matplotlib
-matplotlib.use("Agg")
-import matplotlib.pyplot as plt
-
-print ("ok1")
+import os
+import sys
 
 
 # ── Configuration ─────────────────────────────────────────────────────────────
-INPUT_FILE    = "output3.xlsx"
-OUTPUT_FILE   = "output3_clean.xlsx"
-METHOD        = "mad"       # "mad" (recommended) or "zscore"
-THRESHOLD     = 5.0         # spike if score > threshold
-REPLACE_WITH  = "interpolate"  # "interpolate" | "median" | "nan"
-SAVE_PLOTS    = True
-# ──────────────────────────────────────────────────────────────────────────────
 
-print ("ok2")
+INPUT_FILE  = "output4.xlsx"   # ← change if needed
+OUTPUT_FILE = "output_cleaned.xlsx"
 
-def mad_zscore(series):
-    med = series.median()
-    mad = (series - med).abs().median()
-    return (series - med).abs() / (1.4826 * mad + 1e-10)
+# IQR multiplier for spike detection.
+# 10 = very conservative (only catches extreme glitches).
+# Lower values (e.g. 5) catch more marginal spikes.
+IQR_MULTIPLIER = 10
 
-def std_zscore(series):
-    return (series - series.mean()).abs() / (series.std() + 1e-10)
+# ── Load data ─────────────────────────────────────────────────────────────────
 
-def detect_spikes(series):
-    score = mad_zscore(series) if METHOD == "mad" else std_zscore(series)
-    return score > THRESHOLD
+print(f"Loading: {INPUT_FILE}")
+df = pd.read_excel(INPUT_FILE, header=0)
+print(f"  Rows: {len(df):,}   Channels: {df.shape[1]}")
 
-def remove_spikes(series, mask):
-    cleaned = series.copy().astype(float)
-    cleaned[mask] = np.nan
-    if REPLACE_WITH == "interpolate":
-        cleaned = cleaned.interpolate(method="linear", limit_direction="both")
-    elif REPLACE_WITH == "median":
-        cleaned = cleaned.fillna(series.median())
-    return cleaned
+# ── Detect spikes ─────────────────────────────────────────────────────────────
 
-def plot_channel(original, cleaned, mask, channel):
-    fig, axes = plt.subplots(2, 1, figsize=(15, 5), sharex=True)
-    t = np.arange(len(original))
-    axes[0].plot(t, original.values, lw=0.5, color="steelblue", label="Original")
-    spike_idx = np.where(mask.values)[0]
-    axes[0].scatter(spike_idx, original.values[spike_idx],
-                    color="red", s=12, zorder=5,
-                    label=f"Spikes detected: {len(spike_idx)}")
-    axes[0].set_title(f"{channel} – Original signal")
-    axes[0].legend(fontsize=8)
-    axes[0].set_ylabel("Amplitude")
-    axes[1].plot(t, cleaned.values, lw=0.5, color="seagreen", label="Cleaned")
-    axes[1].set_title(f"{channel} – After spike removal ({REPLACE_WITH})")
-    axes[1].legend(fontsize=8)
-    axes[1].set_ylabel("Amplitude")
-    axes[1].set_xlabel("Sample index")
-    plt.suptitle(f"PiEEG-16 | {channel} | method={METHOD}, threshold={THRESHOLD}", fontsize=10, fontweight="bold")
-    plt.tight_layout()
-    fname = f"spike_plot_{channel.replace('/', '_')}.png"
-    plt.savefig(fname, dpi=130)
-    plt.close()
-    return fname
+spike_mask = pd.Series(False, index=df.index)   # True = this row has a spike
 
+channel_report = {}
+for col in df.columns:
+    q1  = df[col].quantile(0.25)
+    q3  = df[col].quantile(0.75)
+    iqr = q3 - q1
+    lo  = q1 - IQR_MULTIPLIER * iqr
+    hi  = q3 + IQR_MULTIPLIER * iqr
 
-def main():
-    print(f"Loading {INPUT_FILE} …")
-    df = pd.read_excel(INPUT_FILE)
-    df_clean = df.copy()
-    total_spikes = 0
-    plots_saved = []
+    col_spikes = (df[col] < lo) | (df[col] > hi)
+    n_spikes   = col_spikes.sum()
 
-    print(f"\nMethod: {METHOD.upper()}, Threshold: {THRESHOLD}, Replace: {REPLACE_WITH}")
-    print(f"{'Channel':<22} {'Spikes':>8}  {'% of data':>10}")
-    print("─" * 44)
+    if n_spikes:
+        channel_report[col] = {"count": int(n_spikes), "lo": lo, "hi": hi}
 
-    for col in df.columns:
-        series = df[col]
-        mask = detect_spikes(series)
-        n = int(mask.sum())
-        total_spikes += n
-        pct = 100 * n / len(series)
-        if n > 0:
-            df_clean[col] = remove_spikes(series, mask)
-            flag = "  ← cleaned"
-            if SAVE_PLOTS:
-                fname = plot_channel(series, df_clean[col], mask, col)
-                plots_saved.append(fname)
-        else:
-            flag = ""
-        print(f"  {col:<20} {n:>8}   {pct:>8.2f}%{flag}")
+    spike_mask |= col_spikes
 
-    df_clean.to_excel(OUTPUT_FILE, index=False)
-    print(f"\n✓ Cleaned data saved → {OUTPUT_FILE}")
-    print(f"✓ Total spikes removed across all channels: {total_spikes}")
-    if plots_saved:
-        print(f"✓ Plots saved: {', '.join(plots_saved)}")
+spike_rows = df.index[spike_mask].tolist()
 
-if __name__ == "__main__":
-    main()
+# ── Report ────────────────────────────────────────────────────────────────────
+
+print(f"\nSpike detection  (IQR multiplier = {IQR_MULTIPLIER})")
+print("-" * 60)
+if channel_report:
+    for ch, info in channel_report.items():
+        print(f"  {ch:<22}  {info['count']:>4} spike(s)   "
+              f"normal range [{info['lo']:,.0f}, {info['hi']:,.0f}]")
+else:
+    print("  No spikes found in any channel.")
+
+print(f"\nTotal spike rows to remove : {len(spike_rows):,}")
+print(f"Spike row indices          : {spike_rows}")
+
+# ── Remove spikes (all channels simultaneously) ───────────────────────────────
+
+df_clean = df.drop(index=spike_rows).reset_index(drop=True)
+print(f"\nRows after cleaning        : {len(df_clean):,}")
+print(f"Rows removed               : {len(df) - len(df_clean):,}")
+
+# ── Save ──────────────────────────────────────────────────────────────────────
+
+df_clean.to_excel(OUTPUT_FILE, index=False)
+print(f"\nSaved cleaned file → {OUTPUT_FILE}")

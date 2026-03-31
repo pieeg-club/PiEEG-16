@@ -1,6 +1,8 @@
 # PiEEG-16
 Easy way to neuroscience with low-cost shield PiEEG-16 that allows converting Raspberry Pi to brain-computer interface (EEG device) with opportunity measure 16 channels.     
 
+Software [PiEEG Server](https://github.com/pieeg-club/PiEEG-server) 
+
 [Manual](https://pieeg.com/docs/docs/pieeg-16/) for device   
 [Manual](https://github.com/pieeg-club/PiEEG-16/blob/main/PiEEG_quick_start.pdf) for quick start  
 

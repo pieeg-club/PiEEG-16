@@ -8,6 +8,10 @@ SDK Python [Save Data](https://github.com/pieeg-club/PiEEG-16/tree/main/Save_dat
 [Manual](https://pieeg.com/docs/docs/pieeg-16/) for device   
 [Manual](https://github.com/pieeg-club/PiEEG-16/blob/main/PiEEG_quick_start.pdf) for quick start  
 
+PiEEG-16 included to [PiEEG-Server software](https://github.com/pieeg-club/PiEEG-server)  
+<img src="https://github.com/pieeg-club/ironbci/blob/master/Supplementary%20files/imahe_2.png" alt="general view" title="general view" width="90%" height="90%">
+
+
 
 Measure 16 EEG channels with Shield PiEEG-16 and RaspberryPi
 

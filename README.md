@@ -74,8 +74,6 @@ Pins
 </p>
 
 
-
-
 YouTube video presentation  
 <a href="https://youtu.be/tjCazk2Efqs">
   <img src="https://github.com/pieeg-club/PiEEG-16/blob/main/images/youtube.jpg" width="50%" height="50%" alt="generals view">
@@ -83,13 +81,5 @@ YouTube video presentation
 
 
 
- 
 #### Citation   
-https://pieeg.com/news/pieeg-16-is-availabe-in-the-market/  
-arxive paper https://arxiv.org/abs/2409.07491  
-Cite: Rakhmatulin, I. (2024). PiEEG-16 to Measure 16 EEG Channels with Raspberry Pi for Brain-Computer Interfaces and EEG devices. arXiv:2409.07491  
-
-#### Contacts
-Full support in the [Forum](https://pieeg.com/forum-pieeg-low-cost-brain-computer-interface/)   
-
-[LinkedIn](https://www.linkedin.com/company/96475004/admin/feed/posts/)   
+Cite: Rakhmatulin, I. (2024). PiEEG-16 to Measure 16 EEG Channels with Raspberry Pi for Brain-Computer Interfaces and EEG devices. arXiv:2409.07491    
